@@ -1,0 +1,14 @@
+卸载openjdk:
+sudo pacman -R jdk8-openjdk
+sudo pacman -R jre8-openjdk
+sudo pacman -R jre8-openjdk-headless
+
+下载ｔａｒ.gz的jdk包
+https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+移动和解压
+tar -zxvf xxx.tar.gz
+sudo mv xxx /opt/
+
+ln -s /opt/jdk1.8.0_211/bin/java /usr/bin/java
+注意:下载版本和配置路径一样

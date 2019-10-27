@@ -1,0 +1,41 @@
+fdisk -l
+
+p　＃新建分区
+
+d　＃删除分区
+
+1　＃ｗｉｎ１０为/dev/sda1
+
+w　＃生效
+
+reboot
+
+p
+
+n  #新建分区
+
+1
+
+开始默认　
+
+最后不变  #win10到哪里结束就给到那个值，不要超
+
+y  #抹除签名
+
+w
+
+mkfs.ext4 /dev/sda1
+
+##查看uuid(此时会给到），另外可以ls -l /dev/disk/bu-uuid查看
+
+mkdir /oracle
+mount /dev/sda1 /oracle
+
+
+vim /etc/fstab 开机挂载
+
+/dev/sda1 /oracle ext4 defaults,notime,discard 0 0
+或
+UUID=XXXX 
+
+
