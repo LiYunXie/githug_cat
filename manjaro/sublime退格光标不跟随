@@ -1,0 +1,1 @@
+使用同录安装sublime，如果为新版build 3208，应该默认输入法是正常，如果是3.1.1 build 3176，则安装IMESupport:github/zcodes/IMESupport
