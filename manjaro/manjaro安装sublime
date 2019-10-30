@@ -16,3 +16,4 @@ echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/dev/x8
 3. 更新及安装Sublime Textsudo:
 pacman -Syu sublime-text
 
+台式机是4.19.56-1-MANJARO，使用自带pacman-manager搜索安装sublime
