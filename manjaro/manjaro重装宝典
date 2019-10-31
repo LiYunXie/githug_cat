@@ -1,3 +1,5 @@
+manjaro系统官网地址：https://manjaro.org/download/
+
 更换源(可双源）：
 （也可界面：sudo pacman-mirrors -i -c China -m rank）
 nano /var/lib/pacman-mirrors/custom-mirrors.josn
