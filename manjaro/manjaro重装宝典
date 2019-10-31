@@ -38,3 +38,5 @@ pacman -S yay
 使用yay安装谷歌浏览器
 yay  google-chrome
 按提示选数字，1最大
+之后按I，进行install
+
