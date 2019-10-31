@@ -1,0 +1,27 @@
+更换源：
+vim /var/lib/pacman-mirrors/custom-mirrors.josn
+## 阿里云
+Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch
+## 清华大学
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+
+home目录修改为英文名称
+sudo pacman -S xdg-user-dirs-gtk
+export LANG=en_US
+xdg-user-dirs-gtk-update   #然后会有个窗口提示语言更改，更新名称即可
+
+export LANG=zh_CN.UTF-8    #然后重启电脑如果提示语言更改，保留旧的名称即可
+
+安装谷歌输入法（新版manjaro不支持搜狗）
+sudo pacman -S fcitx-im   
+（注意默认回车：全选安装）
+sudo pacman -S fcitx-configtool
+sudo pacman -S fcitx-googlepinyin
+
+vim ~/.profile最下面增加
+    export LC_ALL=zh_CN.UTF-8
+    export GTK_IM_MODULE=fcitx
+    export QT_IM_MODULE=fcitx
+    export XMODIFIERS=@im=fcitx
+
+#重启可切换
