@@ -12,6 +12,10 @@ xdg-user-dirs-gtk-update   #然后会有个窗口提示语言更改，更新名�
 
 export LANG=zh_CN.UTF-8    #然后重启电脑如果提示语言更改，保留旧的名称即可
 
+安装vim
+pacman -S vim
+
+
 安装谷歌输入法（新版manjaro不支持搜狗）
 sudo pacman -S fcitx-im   
 （注意默认回车：全选安装）
@@ -25,3 +29,11 @@ vim ~/.profile最下面增加
     export XMODIFIERS=@im=fcitx
 
 #重启可切换
+
+
+安装yay
+pacman -S yay
+
+使用yay安装谷歌浏览器
+yay  google-chrome
+按提示选数字，1最大
