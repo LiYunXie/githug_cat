@@ -1,10 +1,20 @@
 更换源(可双源）：
 （也可界面：sudo pacman-mirrors -i -c China -m rank）
-vim /var/lib/pacman-mirrors/custom-mirrors.josn
+nano /var/lib/pacman-mirrors/custom-mirrors.josn
 ## 阿里云
 Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch
 ## 清华大学
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+
+
+nano /etc/pacman.conf
+最后增加
+[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+
+[sublime-text]
+Server = https://download.sublimetext.com/arch/dev/x86_64
+
 
 home目录修改为英文名称
 sudo pacman -S xdg-user-dirs-gtk
