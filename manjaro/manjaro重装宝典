@@ -62,5 +62,9 @@ echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/dev/x8
 [sublime-text]
 Server = https://download.sublimetext.com/arch/dev/x86_64
 
+使用git上传的sublime2 注册码注册即可
 保证电脑网络信号够好（无线需要离wifi很近），在开始搜索“软件更新”，之后全部里面搜索sublime-text，选择安装（大概1小时下载完成）
 也可执行pacman -Syu sublime-text，但是一般太慢会被系统强退出。
+
+同步时间
+*/10 * * * * ntpdate 1.cn.pool.ntp.org
