@@ -14,6 +14,8 @@ nano /etc/pacman.conf
 [archlinuxcn]
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 
+pacman -S archlinuxcn-keyring
+#注意是linuxcn
 pacman -Syy
 
 home目录修改为英文名称
@@ -68,3 +70,5 @@ Server = https://download.sublimetext.com/arch/dev/x86_64
 
 同步时间
 */10 * * * * ntpdate 1.cn.pool.ntp.org
+
+安装谷歌 pacman -Syy google-chrome
