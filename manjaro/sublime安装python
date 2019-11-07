@@ -1,0 +1,129 @@
+which python 记下路径
+1.安装python
+①.preferences
+②.browse pa..
+③.新建Python文件件
+④.里面新建文件Python.sublime-commands
+windows内容：
+{
+"cmd":["C:\python27\python.exe", "-u", "$file"],
+"path":"C:\python27",
+"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+"selector": "source.python"
+}
+
+linux内容：
+{
+"cmd": ["/usr/bin/python","-u","$file"],
+"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+"selector": "source.python",
+"encoding": "cp936",
+}
+
+
+
+
+
+
+⑤.tool->bulid system-->python
+
+⑥.build
+
+
+
+
+2.安装高亮插件： bracketHighlighter
+
+
+
+3.安装语法检查：
+windows增加环境变量path：C:\Python27
+
+ctrl+shift+p
+
+install pakeage
+
+Anaconda
+
+修改defualt的配置
+"python_interpreter": "C:/Python27"
+（用下面的直接替换）
+修改user的配置
+win10:
+{
+    "python_interpreter":"C:/python27/python.exe",
+    "suppress_word_completions":true,
+    "suppress_explicit_completions":true,
+    "comlete_parameters":true,
+    "swallow_startup_errors":true,
+    "anaconda_linting":false
+}
+linux：
+{
+    "python_interpreter":"/usr/bin/python",
+    "suppress_word_completions":true,
+    "suppress_explicit_completions":true,
+    "comlete_parameters":true,
+    "swallow_startup_errors":true,
+    "anaconda_linting":false
+}
+
+
+
+重启软件
+
+
+4.高亮显示空格： TrailingSpaces
+
+5.安装 SublimeREPL 
+
+Tools->Build System->New build Systems
+
+
+文件命名为python3.sublime-build
+win10:
+{
+"cmd": ["C:Python27/python.exe","-u","$file"],
+"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+"selector": "source.python",
+"encoding": "cp936",
+}
+linux:
+{
+"cmd": ["/usr/bin/python","-u","$file"],
+"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+"selector": "source.python",
+"encoding": "cp936",
+}
+
+
+
+
+增加快捷键， Preferences->key bindings ，F5打开运行界面
+[
+
+{ "keys": ["f5"], "caption": "SublimeREPL: Python",
+        "command": "run_existing_window_command", "args":
+        {
+            "id": "repl_python",
+            "file": "config/Python/Main.sublime-menu"
+        }
+    }
+]
+增加快捷键，实现input操作（注意适当添加逗号）
+{"keys":["Ctrl+r"],
+"caption": "SublimeREPL: Python - RUN current file",
+"command": "run_existing_window_command",
+"args": {"id": "repl_python_run","file": "config/Python/Main.sublime-menu"}
+}
+
+6.AutoPep8 调整Python代码，使其符合PEP8的要求(ctrl+shift+8)。
+
+6.设置默认使用python新建文件:
+
+View … Syntax … Open all with current extension as … Python
+
+Open the Command Palette and select "Package Control: Install Package", then search for DefaultFileType and you're done!
+(安装DefaultFileType)
+
+8.安装默认浏览器:SideBarEnhancements

@@ -1,0 +1,74 @@
+manjaro系统官网地址：https://manjaro.org/download/
+
+更换源(可双源）：
+（也可界面：sudo pacman-mirrors -i -c China -m rank）
+nano /var/lib/pacman-mirrors/custom-mirrors.josn
+## 阿里云
+Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch
+## 清华大学
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+
+
+nano /etc/pacman.conf
+最后增加
+[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+
+pacman -S archlinuxcn-keyring
+#注意是linuxcn
+pacman -Syy
+
+home目录修改为英文名称
+sudo pacman -S xdg-user-dirs-gtk
+export LANG=en_US
+xdg-user-dirs-gtk-update   #然后会有个窗口提示语言更改，更新名称即可
+
+export LANG=zh_CN.UTF-8    #然后重启电脑如果提示语言更改，保留旧的名称即可
+
+安装vim
+pacman -S vim
+
+
+安装谷歌输入法（新版manjaro不支持搜狗）
+sudo pacman -S fcitx-im   
+（注意默认回车：全选安装）
+sudo pacman -S fcitx-configtool
+sudo pacman -S fcitx-googlepinyin
+
+vim ~/.profile最下面增加
+    export LC_ALL=zh_CN.UTF-8
+    export GTK_IM_MODULE=fcitx
+    export QT_IM_MODULE=fcitx
+    export XMODIFIERS=@im=fcitx
+
+#重启可切换
+
+
+安装yay
+pacman -S yay
+
+使用yay安装谷歌浏览器
+###yay  google-chrome
+###按提示选数字，1最大
+###之后按I，进行install
+
+安装sublime-text3
+curl -O https://download.sublimetext.com/sublimehq-pub.gpg && sudo pacman-key --add sublimehq-pub.gpg && sudo pacman-key --lsign-key 8A8F901A && rm sublimehq-pub.gpg
+
+Stable:
+echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" | sudo tee -a /etc/pacman.conf
+
+Dev:
+echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/dev/x86_64" | sudo tee -a /etc/pacman.conf
+也可以直接/etc/pacman.conf,最后面添加
+[sublime-text]
+Server = https://download.sublimetext.com/arch/dev/x86_64
+
+使用git上传的sublime2 注册码注册即可
+保证电脑网络信号够好（无线需要离wifi很近），在开始搜索“软件更新”，之后全部里面搜索sublime-text，选择安装（大概1小时下载完成）
+也可执行pacman -Syu sublime-text，但是一般太慢会被系统强退出。
+
+同步时间
+*/10 * * * * ntpdate 1.cn.pool.ntp.org
+
+安装谷歌 pacman -Syy google-chrome
